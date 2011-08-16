@@ -1,9 +1,9 @@
 var App = Backbone.Router.extend({
+
     // things to be initialized on app start
     initialize: function () {
 
-        infinity.ui.init();
-        
+        infinity.ui.init();        
     },
 
     routes: {

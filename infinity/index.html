@@ -2,81 +2,61 @@
 <html lang="en"> 
 <head> 
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
-	<title>Infinite, backbone.js app</title>
+    <title>Infinite, backbone.js app</title>
 
-	<script type="text/template" id="stats-template"> 
-	wewe
-	<h2><%= total %></h2>
-	  <% if (total) { %>
-	    <span class="todo-count">
-	      <span class="number"><%= remaining %></span>
-	      <span class="word"><%= remaining == 1 ? 'item' : 'items' %></span> left.
-	    </span>
-	  <% } %>
-	  <% if (done) { %>
-	    <span class="todo-clear">
-	      <a href="#">
-	        Clear <span class="number-done"><%= done %></span>
-	        completed <span class="word-done"><%= done == 1 ? 'item' : 'items' %></span>
-	      </a>
-	    </span>
-	  <% } %>
-	</script> 
+    <!-- libs -->
+    <script type="text/javascript" src="js/lib/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="js/lib/underscore.js"></script>
+    <script type="text/javascript" src="js/lib/backbone.js"></script>
+    <!-- <script type="text/javascript" src="js/lib/mustache.js"></script> --> <!-- https://github.com/janl/mustache.js -->
 
-	<!-- libs -->
-	<script type="text/javascript" src="js/lib/jquery-1.6.2.js"></script>
-	<script type="text/javascript" src="js/lib/underscore.js"></script>
-	<script type="text/javascript" src="js/lib/backbone.js"></script>
-	<script type="text/javascript" src="js/lib/mustache.js"></script> <!-- https://github.com/janl/mustache.js -->
+    <!-- app - extensions -->
+    <script type="text/javascript" src="js/app/extensions/jquery.plugin.pubsub.js"></script>
+    <script type="text/javascript" src="js/app/extensions/apihandler.js"></script>
 
+    <!-- app - modules -->
+    <!-- <script type="text/javascript" src="js/app/modules/statbox.js"></script> -->
+    <!-- <script type="text/javascript" src="js/app/modules/timeline.js"></script> -->
+    <script type="text/javascript" src="js/app/modules/ui.js"></script>
 
-	<!-- app - extensions -->
-	<script type="text/javascript" src="js/app/extensions/jquery.plugin.pubsub.js"></script>
-	<script type="text/javascript" src="js/app/extensions/apihandler.js"></script>
+    <!-- app - data models -->
+    <script type="text/javascript" src="js/app/models/track.js"></script>
+    <script type="text/javascript" src="js/app/models/tracks.js"></script>
 
-	<!-- app - modules -->
-	<!-- <script type="text/javascript" src="js/app/modules/statbox.js"></script> -->
-	<!-- <script type="text/javascript" src="js/app/modules/timeline.js"></script> -->
-	<script type="text/javascript" src="js/app/modules/ui.js"></script>
+    <!-- app - views -->
+    <script type="text/javascript" src="js/app/views/views.js"></script>    
 
-	<!-- app - data models -->
-	<script type="text/javascript" src="js/app/models/track.js"></script>
-	<script type="text/javascript" src="js/app/models/tracks.js"></script>
+    <!-- app -->
+    <script type="text/javascript" src="js/infinity.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="css/s.css">
+    <!-- templates -->
 
-	<!-- app - views -->
-	<script type="text/javascript" src="js/app/views/views.js"></script>	
-
-	<!-- app -->
-	<script type="text/javascript" src="js/infinity.js"></script>
-	
-	
-	<link rel="stylesheet" type="text/css" href="css/s.css">
-	<!-- templates -->
-
-	<script type="text/javascript">
-		tracks.fetch();
-	</script>
+    <script type="text/javascript">
+        tracks.fetch();
+    </script>
 
 </head>
 <body>
 <div id="body">
-	<div id="header"></div>
-	<div id="content">
-		<div id="main">
-			<div id="main-list"><ul></ul></div>
-		</div>
-		<div id="aside">
-			<h2>Sidebar</h2>
-			<div id="statbox"></div>
-			<ul>
-				<li><a href="#tracks" id="action-reaload-tracks">Reload tracks</a></li>
-			</ul>
-		</div>
-	</div>
-	<div id="footer"></div>
+    <div id="header"></div>
+    <div id="content">
+        <div id="main">
+            <div id="main-list"></div>
+        </div>
+        <div id="aside">
+            <h2>Sidebar</h2>
+            <div id="statbox"></div>
+            <ul>
+                <li><a href="#tracks" id="action-reaload-tracks">Reload tracks</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="footer"></div>
 
-	<!-- in html already for performance reasons -->
-	<div id="apihandler-loader"><img src="images/loader5.gif" />Loading...</div>
+    <!-- in html already for performance reasons -->
+    <div id="apihandler-loader"><img src="images/loader5.gif" />Loading...</div>
 </div>
 
 </body>
