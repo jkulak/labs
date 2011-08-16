@@ -43,6 +43,10 @@ div#main-list {
 	/*border: 1px dashed #000;*/
 }
 
+div#main-list a {
+
+}
+
 div#main-list h2 {
 	margin: 2px 0 6px 10px;
 }
@@ -53,18 +57,20 @@ div#main-list>ul {
 	padding: 0;
 }
 
-div#main-list>ul>li {
+div#main-list>ul>li a{
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	-o-border-radius: 10px;
 	-ms-border-radius: 10px;
 	-khtml-border-radius: 10px;
 	border-radius: 10px;
+	display: block;
 
 	/*border: 2px solid #ECBDAD;*/
 	padding: 10px;
 	margin-bottom: 8px;
-
+	
+	text-decoration: none;
 	background: #9FD6D9;
 
 	color: #000;
@@ -73,11 +79,11 @@ div#main-list>ul>li {
 	cursor: pointer;
 }
 
-div#main-list>ul>li:hover {
+div#main-list>ul>li a:hover {
 	background-color: #bFf6f9;	
 }
 
-div#main-list>ul>li>img.track-image {
+div#main-list>ul>li img.track-image {
 	width: 48px;
 	height: 48px;
 	margin-right: 10px;

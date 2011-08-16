@@ -18,7 +18,8 @@ var Track = Backbone.Model.extend({
 		return {
 			title: this.get('title'),
 			imageUrl: this.get('artwork_url') || this.get('user').avatar_url,
-			artist: this.get('user').username
+			artist: this.get('user').username,
+			url: '#!/track/id-' + this.get('id')
 		};
 	}
 });

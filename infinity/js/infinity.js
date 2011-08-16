@@ -3,7 +3,7 @@ var App = Backbone.Router.extend({
     initialize: function () {
 
         infinity.ui.init();
-        appView.render();
+        
     },
 
     routes: {
@@ -18,6 +18,8 @@ var App = Backbone.Router.extend({
 
     main: function (action) {
         console.log('router->main (' + action + ')');
+        tracks.reset();
+
     },
 
     viewTrack: function (id) {
@@ -30,6 +32,7 @@ var App = Backbone.Router.extend({
 $(function(){
     // Run application
     var app = new App();
+    appView = new myViews.AppView();
     
     // Start Backbone history a neccesary step for bookmarkable URL's
     Backbone.history.start();   
