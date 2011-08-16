@@ -1,52 +1,38 @@
 var myApp = myApp || {};
 myApp.models = myApp.models || {};
 
-myApp.views: {
-    
-    TrackLi = Backbone.View.extend({
-            
-        tagName: 'li',
-        template: _.template('<a href="<%= url %>"><img class="track-image" src="<%= imageUrl %>" /><%= artist %> - <%= title %></a>'),
-        render: function () {
+myApp.models.Track = Backbone.Model.extend({
 
-            $(this.el).html(this.template(this.model.toListView()));
-            return this;
-        }
-    }),
+    defaults: {
+        // title: 'default_title'
+    },
 
-    Track = Backbone.Model.extend({
+    initialize: function (data) {
 
-        defaults: {
-            // title: 'default_title'
-        },
+    },
 
-        initialize: function (data) {
+    save: function () {
 
-        },
+        tracks.add(this);
+    },
 
-        save: function () {
+    toListView: function () {
 
-            tracks.add(this);
-        },
+        return {
+            title: this.get('title'),
+            imageUrl: this.get('artwork_url') || this.get('user').avatar_url,
+            artist: this.get('user').username,
+            url: '#!/track/id-' + this.get('id')
+        };
+    },
 
-        toListView: function () {
+    toView: function () {
 
-            return {
-                title: this.get('title'),
-                imageUrl: this.get('artwork_url') || this.get('user').avatar_url,
-                artist: this.get('user').username,
-                url: '#!/track/id-' + this.get('id')
-            };
-        },
-
-        toView: function () {
-
-            return {
-                title: this.get('title'),
-                imageUrl: this.get('artwork_url') || this.get('user').avatar_url,
-                artist: this.get('user').username,
-                url: '#!/track/id-' + this.get('id')
-            };
-        }
-    })
-}
+        return {
+            title: this.get('title'),
+            imageUrl: this.get('artwork_url') || this.get('user').avatar_url,
+            artist: this.get('user').username,
+            url: '#!/track/id-' + this.get('id')
+        };
+    }
+});
