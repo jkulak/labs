@@ -20,7 +20,7 @@ var App = Backbone.Router.extend({
     main: function (action) {
 
         console.log('router->main (' + action + ')');
-
+ 
         // Render ul element
         $('#main').html(listView.render().el);
     },
