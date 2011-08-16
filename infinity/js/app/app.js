@@ -1,7 +1,5 @@
-var tracks = new Tracks();
-var listView = new myViews.ListView({collection: tracks});
-// Crate instance of tracks collection
-
+var tracks = new appCollections.Tracks();
+var listView = new appViews.List({collection: tracks});
 
 
 $(function(){
