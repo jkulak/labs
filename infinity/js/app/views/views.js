@@ -37,7 +37,7 @@ var myViews = function () {
             initialize: function () {
 
                 // tracks.bind('reset', this.addAll, this);
-                tracks.bind('reset', this.addAll, this);
+                this.collection.bind('reset', this.addAll, this);
             },
 
             events: {
@@ -92,5 +92,3 @@ var myViews = function () {
         })
     };
 }();
-
-var listView = new myViews.ListView();

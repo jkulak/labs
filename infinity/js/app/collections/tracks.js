@@ -6,6 +6,3 @@ var Tracks = Backbone.Collection.extend({
         return response;
     }
 });
-
-// Crate instance of tracks collection
-var tracks = new Tracks();

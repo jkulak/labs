@@ -1,35 +1,35 @@
 var Track = Backbone.Model.extend({
 
-	defaults: {
-		// title: 'default_title'
-	},
+    defaults: {
+        // title: 'default_title'
+    },
 
-	initialize: function (data) {
+    initialize: function (data) {
 
-	},
+    },
 
-	save: function () {
+    save: function () {
 
-		tracks.add(this);
-	},
+        tracks.add(this);
+    },
 
-	toListView: function () {
+    toListView: function () {
 
-		return {
-			title: this.get('title'),
-			imageUrl: this.get('artwork_url') || this.get('user').avatar_url,
-			artist: this.get('user').username,
-			url: '#!/track/id-' + this.get('id')
-		};
-	},
+        return {
+            title: this.get('title'),
+            imageUrl: this.get('artwork_url') || this.get('user').avatar_url,
+            artist: this.get('user').username,
+            url: '#!/track/id-' + this.get('id')
+        };
+    },
 
-	toView: function () {
+    toView: function () {
 
-		return {
-			title: this.get('title'),
-			imageUrl: this.get('artwork_url') || this.get('user').avatar_url,
-			artist: this.get('user').username,
-			url: '#!/track/id-' + this.get('id')
-		};
-	}
+        return {
+            title: this.get('title'),
+            imageUrl: this.get('artwork_url') || this.get('user').avatar_url,
+            artist: this.get('user').username,
+            url: '#!/track/id-' + this.get('id')
+        };
+    }
 });
