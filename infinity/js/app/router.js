@@ -1,4 +1,6 @@
-var App = Backbone.Router.extend({
+var myApp = myApp || {};
+
+myApp.Router = Backbone.Router.extend({
 
     // things to be initialized on app start
     initialize: function () {
