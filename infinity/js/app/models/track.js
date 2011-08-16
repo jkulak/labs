@@ -13,7 +13,17 @@ var Track = Backbone.Model.extend({
 		tracks.add(this);
 	},
 
-	toRender: function () {
+	toListView: function () {
+
+		return {
+			title: this.get('title'),
+			imageUrl: this.get('artwork_url') || this.get('user').avatar_url,
+			artist: this.get('user').username,
+			url: '#!/track/id-' + this.get('id')
+		};
+	},
+
+	toView: function () {
 
 		return {
 			title: this.get('title'),
