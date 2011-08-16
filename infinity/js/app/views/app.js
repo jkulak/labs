@@ -1,6 +1,7 @@
-var appViews = appViews || {};
+var myApp = myApp || {};
+myApp.views = myApp.views || {};
 
-appViews.App = Backbone.View.extend({
+myApp.views.App = Backbone.View.extend({
 
     statsTemplate: _.template('<%= count %> tracks loaded...'),
 

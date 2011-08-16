@@ -38,13 +38,13 @@ myApp.Router = Backbone.Router.extend({
         // tracks.unbind('all');
 
         if (tracks.length) {
-            var view = new appViews.Track({model: tracks.get(id)});
+            var view = new myApp.views.Track({model: tracks.get(id)});
             var html = view.render().el;    
             $('#main').html(html);
 
         } else {
             tracks.bind('reset', function () {
-                var view = new appViews.Track({model: tracks.get(id)});
+                var view = new myApp.views.Track({model: tracks.get(id)});
                 var html = view.render().el;    
                 $('#main').html(html); 
             });

@@ -1,6 +1,7 @@
-var appViews = appViews || {};
+var myApp = myApp || {};
+myApp.views = myApp.views || {};
 
-appViews.TrackLi = Backbone.View.extend({
+myApp.views.TrackLi = Backbone.View.extend({
             
     tagName: 'li',
     template: _.template('<a href="<%= url %>"><img class="track-image" src="<%= imageUrl %>" /><%= artist %> - <%= title %></a>'),

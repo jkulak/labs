@@ -1,6 +1,7 @@
-var appViews = appViews || {};
+var myApp = myApp || {};
+myApp.views = myApp.views || {};
 
-appViews.List = Backbone.View.extend({
+myApp.views.List = Backbone.View.extend({
 
     tagName: 'ul',
     id: 'item-list',            
@@ -29,7 +30,7 @@ appViews.List = Backbone.View.extend({
 
     addOne: function (item) {
 
-        var view = new appViews.TrackLi({model: item});
+        var view = new myApp.views.TrackLi({model: item});
         $(this.el).append(view.render().el);
     },
 

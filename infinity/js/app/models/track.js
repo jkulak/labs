@@ -1,6 +1,7 @@
-var appModels = appModels || {};
+var myApp = myApp || {};
+myApp.models = myApp.models || {};
 
-appModels.Track = Backbone.Model.extend({
+myApp.models.Track = Backbone.Model.extend({
 
     defaults: {
         // title: 'default_title'

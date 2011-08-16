@@ -1,6 +1,7 @@
-var appViews = appViews || {};
+var myApp = myApp || {};
+myApp.views = myApp.views || {};
 
-appViews.Track = Backbone.View.extend({
+myApp.views.Track = Backbone.View.extend({
     
     tagName: 'div',
     className: 'track-details',
