@@ -11,7 +11,6 @@ var myViews = function () {
 
             render: function () {
 
-                console.log('track view render', this.model);
                 this.id = 'track-' + this.model.get('id');
                 $(this.el).html(this.template(this.model.toView()));
                 return this;   
@@ -41,12 +40,13 @@ var myViews = function () {
             },
 
             events: {
-                "click li": "itemClick",
 
+                "click li": "itemClick",
             },
 
             itemClick: function (event) {
-                console.log('click item!', event);  
+
+                // console.log('click item!', event);
             },
 
             addAll: function () {

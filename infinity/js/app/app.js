@@ -5,8 +5,6 @@ var listView = new myViews.ListView({collection: tracks});
 
 
 $(function(){
-
-
     // Run application
     var app = new App();
     appView = new myViews.AppView();

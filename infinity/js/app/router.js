@@ -35,19 +35,15 @@ var App = Backbone.Router.extend({
         // unbind all events
         // tracks.unbind('all');
 
-        console.log(tracks.length);
-
         if (tracks.length) {
             var view = new myViews.TrackView({model: tracks.get(id)});
             var html = view.render().el;    
-            console.log(html);
             $('#main').html(html);
 
         } else {
             tracks.bind('reset', function () {
                 var view = new myViews.TrackView({model: tracks.get(id)});
                 var html = view.render().el;    
-                console.log(html);
                 $('#main').html(html); 
             });
         };
