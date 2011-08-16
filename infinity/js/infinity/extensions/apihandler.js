@@ -9,7 +9,7 @@ infinity.apihandler = function() {
 		api_url: 'https://api.soundcloud.com',
 		client_id: '59570769cb4121a0582c05646324ba47',
 		offset: 0,
-		limit: 250,
+		limit: 25,
 		timeout: 100000
 	}
 

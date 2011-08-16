@@ -32,17 +32,22 @@ infinity.timeline = function() {
 		append: function(data) {
 
 			$.each(data, function(index, value) {
-				var li = '<li class="track">';
+				
 				if (null != value.art_work) {
-					li += '<img src="' + value.art_work + '" />';
+					image_src = value.art_work;
 				} else {
 					if (null != value.user.avatar_url) {
-						li += '<img class="avatar" src="' + value.user.avatar_url + '" />';
+						image_src = value.user.avatar_url;
 					};
 				};
-				li += value.user.username + ' - ' + value.title;
-				li += '</li>';
 
+				var view = {
+					image_src: image_src,
+					track_artist_name: value.user.username,
+					track_title: value.title
+				};
+
+				var li = Mustache.to_html(infinity.partials.timeline.item, view);
 				$(li).appendTo(_ul).hide().delay(index * 20).fadeIn(100);
 				
 			});

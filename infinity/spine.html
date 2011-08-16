@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+	<title>Spine test</title>
+
+	<script type="text/javascript" src="js/lib/underscore-min.js"></script>
+	<script type="text/javascript" src="js/lib/backbone-min.js"></script>
+
+
+</head>
+<body>
+<script type="text/javascript">
+
+	var Sidebar = Backbone.Model.extend({
+	  promptColor: function() {
+	    var cssColor = prompt("Please enter a CSS color:");
+	    this.set({color: cssColor});
+	  }
+	});
+
+	var Workspace = Backbone.Router.extend({
+
+	  routes: {
+	    "!/help":                 "help",    // #help
+	    "!/search/:query":        "search",  // #search/kiwis
+	    "!/search/:query/p:page": "search"   // #search/kiwis/p7
+	  },
+
+	  help: function() {
+		console.log('help');
+	  },
+
+	  search: function(query, page) {
+	  	console.log('search', query, page);
+	  }
+
+	});
+
+
+	$(function () {
+		Backbone.history.start()
+	});
+
+
+
+	_.each([1, 2, 3, 4], function (v, k) {
+		console.log(v);
+	});
+	
+</script>
+
+<script>
+    
+
+</script>
+
+<a href="#action">Activate route</a>
+<a href="#/route/action">Activate another route</a>
+
+</body>
+</html>

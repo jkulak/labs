@@ -5,17 +5,35 @@
 	<title>infinite</title>
 
 	<!-- libs -->
-	<script type="text/javascript" src="js/lib/jquery-1.6.2.js"></script>
-
-	<!-- app -->
-	<script type="text/javascript" src="js/infinity/extensions/jquery.plugin.pubsub.js"></script>
 	
+	<script type="text/javascript" src="js/lib/jquery-1.6.2.js"></script>
+	<script type="text/javascript" src="js/lib/underscore.js"></script>
+	<script type="text/javascript" src="js/lib/backbone.js"></script>
+	<script type="text/javascript" src="js/lib/mustache.js"></script> <!-- https://github.com/janl/mustache.js -->
+
+
+	<!-- app - extensions -->
+	<script type="text/javascript" src="js/infinity/extensions/jquery.plugin.pubsub.js"></script>
+	<script type="text/javascript" src="js/infinity/extensions/apihandler.js"></script>
+
+	<!-- app - modules -->
 	<script type="text/javascript" src="js/infinity/modules/statbox.js"></script>
 	<script type="text/javascript" src="js/infinity/modules/timeline.js"></script>
 	<script type="text/javascript" src="js/infinity/modules/ui.js"></script>
 	<script type="text/javascript" src="js/infinity.js"></script>
 
-	<script type="text/javascript" src="js/infinity/extensions/apihandler.js"></script>
+	<!-- app - data models -->
+	<script type="text/javascript" src="js/infinity/models/track.js"></script>
+	<script type="text/javascript" src="js/infinity/models/track-collection.js"></script>
+
+	<!-- app - views -->
+	<script type="text/javascript" src="js/infinity/views/track-row.js"></script>	
+
+
+	<!-- app - mustache templates -->
+	<script type="text/javascript" src="js/infinity/templates/_partials.js"></script>
+
+	
 	
 	<link rel="stylesheet" type="text/css" href="css/s.css">
 

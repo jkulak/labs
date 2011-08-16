@@ -51,7 +51,6 @@ div#main-list>ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-
 }
 
 div#main-list>ul>li {
@@ -63,7 +62,7 @@ div#main-list>ul>li {
 	border-radius: 10px;
 
 	/*border: 2px solid #ECBDAD;*/
-	padding: 5px;
+	padding: 10px;
 	margin-bottom: 8px;
 
 	background: #9FD6D9;
@@ -78,12 +77,12 @@ div#main-list>ul>li:hover {
 	background-color: #bFf6f9;	
 }
 
-div#main-list>ul>li>img.avatar {
-	width: 24px;
-	height: 24px;
+div#main-list>ul>li>img.track-image {
+	width: 48px;
+	height: 48px;
 	margin-right: 10px;
 	
-	vertical-align: bottom;
+	vertical-align: top;
 }
 
 div#apihandler-loader {
