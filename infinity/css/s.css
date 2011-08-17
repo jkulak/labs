@@ -126,4 +126,5 @@ div#apihandler-loader img {
     top: 0;
     left: 400px;
     background: lime;
+    display: none;
 }
