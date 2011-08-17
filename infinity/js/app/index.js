@@ -1,4 +1,5 @@
 var tracks = new myApp.collections.Tracks();
+tracks.fetch();
 
 $(function(){
     // Run application

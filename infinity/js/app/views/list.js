@@ -8,7 +8,6 @@ myApp.views.List = Backbone.View.extend({
 
     initialize: function () {
 
-        // tracks.bind('reset', this.addAll, this);
         this.collection.bind('reset', this.addAll, this);
     },
 
@@ -25,7 +24,7 @@ myApp.views.List = Backbone.View.extend({
     addAll: function () {
 
         $(this.el).html('');
-        tracks.each(this.addOne, this);
+        this.collection.each(this.addOne, this);
     },
 
     addOne: function (item) {
