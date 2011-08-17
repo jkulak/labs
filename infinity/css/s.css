@@ -91,28 +91,6 @@ div#main>ul>li img.track-image {
 	vertical-align: top;
 }
 
-div#apihandler-loader {
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-o-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	border-radius: 3px;
-
-	position: fixed;
-	color: #000;
-	top: 10px;
-	left: 10px;
-	padding: 4px;
-	display: none;
-	background-color: #fff;
-}
-
-div#apihandler-loader img {
-	vertical-align: middle;
-	padding-right: 10px;
-}
-
 .track-details {
 	border: 10px solid #777;
 	border-radius: 10px;
@@ -120,11 +98,25 @@ div#apihandler-loader img {
 }
 
 #notifier {
-    width: 200px;
-    height: 60px;
     position: fixed;
+    left: 20px;
+	display: none;
     top: 0;
-    left: 400px;
-    background: lime;
-    display: none;
+
+    background: #fff;
+    /*display: none;*/
+
+    -webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	padding: 3px 10px 2px 10px;
+	font-size: 12px;
+}
+
+#notifier img {
+	vertical-align: middle;
+	padding: 0 6px 4px 0;
 }

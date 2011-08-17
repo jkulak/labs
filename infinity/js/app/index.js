@@ -3,12 +3,13 @@ tracks.fetch();
 
 $(function(){
     // Run application
-    var router = new myApp.Router();
-    app = new myApp.views.App();
+    myApp.router = new myApp.Router();
+    myApp.app = new myApp.views.App();
 
-    app.notifier.notify('DOM ready');
+    myApp.app.notifier.notify('DOM ready');
 
     // Start Backbone history a neccesary step for bookmarkable URL's
+    // {pushState: true}
     Backbone.history.start();
 
     $('#action-test').click(function () {

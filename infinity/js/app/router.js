@@ -8,18 +8,16 @@ myApp.Router = Backbone.Router.extend({
         infinity.ui.init();        
     },
 
+    // Define application routes
     routes: {
-        '!/:action':         'main',
-        '!/track/id-:id':    'viewTrack',
-        '*route':            'notFound'
+
+        '!/:action':      'indexAction',
+        '!/track/id-:id': 'viewTrackAction',
+        '*route':         'notFoundAction' // all other
     },
 
-    notFound: function (route) {
-        console.log('router->' + route + ' (404, route not defined)');
-        $('#main').html('<h2>404</h2>');
-    },
-
-    main: function (action) {
+    
+    indexAction: function (action) {
 
         console.log('router->main (' + action + ')');
  
@@ -27,7 +25,13 @@ myApp.Router = Backbone.Router.extend({
         $('#main').html(new myApp.views.List({collection: tracks}).render().el);
     },
 
-    viewTrack: function (id) {
+    notFoundAction: function (route) {
+
+        console.log('router->' + route + ' (404, route not defined)');
+        $('#main').html('<h2>404</h2>');
+    },
+
+    viewTrackAction: function (id) {
 
         console.log('router->track(' + id + ')');
 
@@ -36,17 +40,20 @@ myApp.Router = Backbone.Router.extend({
 
         // unbind all events
         // tracks.unbind('all');
-
-        app.notifier.notify('Hello!');
+        
 
         if (tracks.length) {
-            var view = new myApp.views.Track({model: tracks.get(id)});
+            var model = tracks.get(id);
+            myApp.app.notifier.show('Loading: ' + model.get('title'));
+            var view = new myApp.views.Track({model: model});
             var html = view.render().el;    
             $('#main').html(html);
 
         } else {
             tracks.bind('reset', function () {
-                var view = new myApp.views.Track({model: tracks.get(id)});
+                var model = tracks.get(id);
+                myApp.app.notifier.show('Loading: ' + model.get('title'));
+                var view = new myApp.views.Track({model: model});
                 var html = view.render().el;    
                 $('#main').html(html); 
             });

@@ -11,7 +11,7 @@ myApp.views.App = Backbone.View.extend({
         tracks.bind('remove',   this.updateStat, this);
         tracks.bind('reset',    this.updateStat, this);
 
-        this.notifier = new myApp.views.Notifier('#body');
+        this.notifier = new myApp.views.Notifier('body');
     },
 
     updateStat: function () {
