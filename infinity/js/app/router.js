@@ -37,6 +37,8 @@ myApp.Router = Backbone.Router.extend({
         // unbind all events
         // tracks.unbind('all');
 
+        app.notifier.notify('Hello!');
+
         if (tracks.length) {
             var view = new myApp.views.Track({model: tracks.get(id)});
             var html = view.render().el;    

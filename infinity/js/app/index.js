@@ -4,7 +4,9 @@ tracks.fetch();
 $(function(){
     // Run application
     var router = new myApp.Router();
-    var app = new myApp.views.App();
+    app = new myApp.views.App();
+
+    app.notifier.notify('DOM ready');
 
     // Start Backbone history a neccesary step for bookmarkable URL's
     Backbone.history.start();
