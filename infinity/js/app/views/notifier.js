@@ -6,35 +6,41 @@ myApp.views.Notifier = Backbone.View.extend({
     initialize: function (elem) {
 
         $(elem).append(this.render().el);
-        console.log('initialize: ' , this.render().el);
     },
 
-    notify: function (notice) {
+    notify: function (notice, loader) {
 
-        // $(this.el).html(this.template({notice: notice})).animate({'top': '+=33'}, 1500);
-        //.animate({'top': '-=66px'}, 1500);
-        console.log('notify: ' + notice);
-        $(this.el).html(this.template({notice: notice})).fadeIn('slow');
+        console.log('notifier.notify()', notice);
+        this.show(notice, loader);
+        setTimeout(this.hide.bind(this), 1000);
     },
 
-    show: function (notice) {
+    loading: function (notice) {
 
-        $(this.el).html(this.template({notice: notice})).animate({'top': '+=33px'}, 500);
+        this.notify(notice, true);
+    },
+
+    show: function (notice, loading) {
+
+        $(this.render(notice, loading).el).animate({top: 0}, 500);
     },
 
     hide: function () {
-
-        $(this.el).animate({'top': '-=66px'}, 1500);
+        $(this.el).animate({top: -33}, 600);
     },
 
     tagName: 'div',
     id: 'notifier',
 
-    template: _.template('<img src="images/roll.gif" /><span><%= notice %></span>'),
+    template: _.template('<% if (loading) { %> <img src="images/roll.gif" /><% } %><span><%= notice %></span>'),
 
-    render: function (notice) {
+    render: function (notice, loading) {
 
-        $(this.el).html(this.template({notice: notice}));
+        if (null === loading) {
+            loading = true;
+        };
+
+        $(this.el).html(this.template({notice: notice, loading: loading}));
         return this;
     }
 });
