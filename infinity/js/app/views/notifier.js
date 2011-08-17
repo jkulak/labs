@@ -30,6 +30,7 @@ myApp.views.Notifier = Backbone.View.extend({
     },
 
     tagName: 'div',
+
     id: 'notifier',
 
     template: _.template('<% if (loading) { %> <img src="images/roll.gif" /><% } %><span><%= notice %></span>'),
