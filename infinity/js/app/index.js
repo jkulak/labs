@@ -1,6 +1,4 @@
-
 var tracks = new myApp.collections.Tracks();
-var listView = new myApp.views.List({collection: tracks});
 
 $(function(){
     // Run application

@@ -6,7 +6,8 @@ myApp.views.Track = Backbone.View.extend({
     tagName: 'div',
     className: 'track-details',
 
-    template: _.template('<a href="<%= url %>"><img class="track-image" src="<%= imageUrl %>" /><%= artist %> - <%= title %></a>'),
+    template: _.template(
+        '<a href="<%= url %>"><img class="track-image" src="<%= imageUrl %>" /><%= artist %> - <%= title %></a>'),
 
     render: function () {
 
@@ -19,7 +20,8 @@ myApp.views.Track = Backbone.View.extend({
 myApp.views.TrackLi = Backbone.View.extend({
             
     tagName: 'li',
-    template: _.template('<a href="<%= url %>"><img class="track-image" src="<%= imageUrl %>" /><%= artist %> - <%= title %></a>'),
+    template: _.template(
+        '<a href="<%= url %>"><img class="track-image" src="<%= imageUrl %>" /><%= artist %> - <%= title %></a>'),
     render: function () {
 
         $(this.el).html(this.template(this.model.toListView()));

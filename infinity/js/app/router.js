@@ -24,7 +24,7 @@ myApp.Router = Backbone.Router.extend({
         console.log('router->main (' + action + ')');
  
         // Render ul element
-        $('#main').html(listView.render().el);
+        $('#main').html(new myApp.views.List({collection: tracks}).render().el);
     },
 
     viewTrack: function (id) {
