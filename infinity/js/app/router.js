@@ -16,11 +16,11 @@ myApp.Router = Backbone.Router.extend({
         '*route':         'notFoundAction' // all other
     },
 
-    
     indexAction: function (action) {
 
         console.log('router->main (' + action + ')');
  
+        tracks.unbind('all');
         // Render ul element
         $('#main').html(new myApp.views.List({collection: tracks}).render().el);
     },
@@ -34,30 +34,14 @@ myApp.Router = Backbone.Router.extend({
     viewTrackAction: function (id) {
 
         console.log('router->track(' + id + ')');
+        
+        $('#main').html(new myApp.views.Track(id).el);
 
         // remove components
         // listView.remove();
 
         // unbind all events
         // tracks.unbind('all');
-        
-
-        if (tracks.length) {
-            var model = tracks.get(id);
-            myApp.app.notifier.show('Loading: ' + model.get('title'));
-            var view = new myApp.views.Track({model: model});
-            var html = view.render().el;    
-            $('#main').html(html);
-
-        } else {
-            tracks.bind('reset', function () {
-                var model = tracks.get(id);
-                myApp.app.notifier.show('Loading: ' + model.get('title'));
-                var view = new myApp.views.Track({model: model});
-                var html = view.render().el;    
-                $('#main').html(html); 
-            });
-        };
 
         // tracks.bind('reset', function () {
         //     $('#main').html(trackView.render(id).el);    

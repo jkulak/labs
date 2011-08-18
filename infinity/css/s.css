@@ -100,12 +100,9 @@ div#main>ul>li img.track-image {
 #notifier {
     position: fixed;
     left: 20px;
-	display: none;
-    top: 0;
-
-    background: #fff;
+    top: -33px;
     /*display: none;*/
-
+    background: #fff;
     -webkit-border-bottom-right-radius: 10px;
 	-webkit-border-bottom-left-radius: 10px;
 	-moz-border-radius-bottomright: 10px;
