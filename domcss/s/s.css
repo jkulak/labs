@@ -1,0 +1,7 @@
+#box {
+	position: fixed;
+	top: 200px;
+	left: 10px;
+	background: #fdb;
+	padding: 20px;
+}
