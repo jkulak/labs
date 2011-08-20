@@ -5,24 +5,39 @@ myApp.Router = Backbone.Router.extend({
     // things to be initialized on app start
     initialize: function () {
 
+        this.listView = new myApp.views.List();
         infinity.ui.init();        
     },
 
     // Define application routes
     routes: {
 
+        '!/list-one': 'listOneAction',
+        '!/list-two': 'listTwoAction',
         '!/:action':      'indexAction',
         '!/track/id-:id': 'viewTrackAction',
         '*route':         'notFoundAction' // all other
+    },
+
+    listOneAction: function () {
+
+        this.listView.categoryId = 3;
+        $('#main').html(this.listView.render().el);
+    },
+
+    listTwoAction: function () {
+
+        this.listView.categoryId = 8;
+        $('#main').html(this.listView.render().el);
     },
 
     indexAction: function (action) {
 
         console.log('router->main (' + action + ')');
  
-        tracks.unbind('all');
+        // tracks.unbind('all');
         // Render ul element
-        $('#main').html(new myApp.views.List({collection: tracks}).render().el);
+        // $('#main').html(new myApp.views.List({collection: tracks}).render().el);
     },
 
     notFoundAction: function (route) {
