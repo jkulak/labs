@@ -19,15 +19,33 @@
 
         <style>
         body {
-            width: 226px;
+            width: 100%;
+        }
+
+        .inner {
+            margin: 10px;
         }
         </style>
+
+
+        <script type="text/javascript">
+document.onkeyup=function(e) {
+    if(e.which == 13){
+        alert('pressed ' + e); // no jquery :/
+        //rest of function
+
+        return false;
+    }
+}
+</script>
+
+
     </head>
     <body>
 
-<div>
+<div class="inner">
             <div class="toolbar">
-                <input type="search">
+                <input type="search" id="inputID" />
                 <!-- <button id="button">Button</button> -->
                 <div class="clear"></div>
 
