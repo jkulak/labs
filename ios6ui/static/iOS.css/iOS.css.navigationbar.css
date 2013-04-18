@@ -1,0 +1,130 @@
+/*
+ * iOS.css Navigation Bar (CSS) v1.0
+ * http://www.raffael.me/iOS.css/
+ * http://github.com/raffael-me/iOS.css/
+ *
+ * Copyright (c) 2012 Raffael Hannemann
+ * Dual licensed under the MIT.
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ */
+
+/**
+ * USAGE:
+ * 
+ * 1. Make a <nav class="iOSnavigationbar"></nav> tag,
+ * 2. Place <a><i class="myIcon">Label</a> tags inside the nav tag.
+ * (Optionally, wrap the <a /> tags into a <div /> wrapper to prevent the individual tabs
+ * from stretching across the entire width of the screen).
+ *
+ * Apply the ".current" class to the anchor that represents the currently active tab.
+ *
+ * Apply one of the .grid[1,2,3,4,5] classes to the <nav /> tag based on how much tab items
+ * you want.
+ *
+ * The <i /> tags represent the icons. Icon should be 80px * 30px PNG files, which contain
+ * both the active and the normal state side by side (40px * 30px each).
+ * 
+ * Place a <sup>[]</sup> inside the <a /> elements to show a red notification bubble 
+ *
+ */
+nav.iOSnavigationbar {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 47px;
+	font: bold 1em/1.5em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	border-top: 1px solid #454545;
+	box-shadow: 0 -1px 0 0px #2c2c2c;
+	background: -webkit-gradient(linear, left top, left bottom, from(#2e2e2e), color-stop(0.49999, #131313), color-stop(0.5, black), to(black));
+}
+nav.iOSnavigationbar * {
+	-webkit-user-select: none;
+}
+
+/**
+ * You can wrap your <a /> tags in a div, which prevents the individual tabs
+ * to stretch across the entire width of the screen:
+ */
+nav.iOSnavigationbar > div {
+	margin: 0 auto;
+	width: 320px;
+}
+
+nav.iOSnavigationbar
+a {
+	display: block;
+	height: 44px;
+	float: left;
+	text-align: center;
+	padding: 0px 4px 2px;
+	margin-top: 1px;
+	-webkit-box-sizing: border-box;
+	height: 46px;
+	text-decoration: none;
+	line-height: 76px;
+	color: #979797;
+	font-size: 10px;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+nav.iOSnavigationbar
+a.current {
+	background-image: -webkit-linear-gradient(bottom, #1e1e1e 0%, #252525 49.9%, #343434 50%, #4a4a4a 100%);
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	box-shadow: 0 0 0 1px rgba(0,0,0,0.1) inset;
+	height: 45px;
+	color: white;
+}
+
+nav.iOSnavigationbar.grid2
+a { width: 50%; }
+
+nav.iOSnavigationbar.grid3
+a { width: 33.3333%; }
+
+nav.iOSnavigationbar.grid4
+a { width: 25%; }
+
+nav.iOSnavigationbar.grid5
+a { width: 20%; }
+
+
+nav.iOSnavigationbar
+i {
+	display: block;
+	position: absolute;
+	width: 40px;
+	height: 30px;
+	margin-bottom: -20px;
+	margin-left: -20px;
+	margin-top: 2px;
+	left: 50%;
+	background-repeat: no-repeat;
+	-webkit-background-size: 200% 100%;
+}
+
+nav.iOSnavigationbar a.current
+i {
+	background-position: 100% 0;
+}
+
+nav.iOSnavigationbar
+sup {
+	position: absolute;
+	top: -1px;
+	right: 0px;
+	background: -webkit-linear-gradient(#f4b2b6 0%, #e3444b 49%, #da0711 50%);
+	text-shadow: 0 1 0 1px #da0711;
+	display: block;
+	width: 14px;
+	height: 14px;
+	border: 2px solid white;
+	box-shadow: 0 3px 4px -1px black;
+	/* padding: 0 3px; if more than one character in sup */
+	border-radius: 20px;
+	color: white;
+	font: bold 11px/13px "Helvetica Neue";
+}
