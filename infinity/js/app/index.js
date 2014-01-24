@@ -24,3 +24,6 @@ $(function(){
     // Backbone.history.start({pushState: true, root: "/index.html"});
     Backbone.history.start();
 });
+
+
+console.log('Log message');
