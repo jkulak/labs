@@ -1,0 +1,45 @@
+body {
+    color: white;
+}
+
+#breakpoints {
+    position: fixed;
+    top: 0;
+}
+
+#breakpoints div {
+    background-color: #eeaaaa;
+    width: 1px;
+    position: fixed;
+    height: 100%;
+    font-size: 9px;
+}
+
+.row div {
+    /*border: 1px solid black;*/
+}
+
+.col-xs-12 {
+    height: 100px;
+    background-color: lime;
+}
+
+.col-xs-6 {
+    background-color: red;
+}
+
+.col-xs-1 {
+    background-color: navy;
+}
+.col-xs-2 {
+    background-color:  black;
+}
+.col-xs-3 {
+    background-color: yellow;
+}
+.col-xs-4 {
+    background-color: lime;
+}
+.col-xs-5 {
+    background-color: red;
+}
