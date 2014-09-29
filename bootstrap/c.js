@@ -1,3 +1,4 @@
+// break points
 var sizes = [320, 480, 600, 800, 1200, 1600, 2800];
 
 $(function () {
