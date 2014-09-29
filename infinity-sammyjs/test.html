@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+</head>
+<body>
+
+<script>
+
+var a = 1;
+b = 2;
+
+(function() {
+   var c = 3;
+   d = 4;    
+   console.log(a);
+   a = a+ 99; 
+   console.log(b);
+   console.log('anonymous closure not executed');
+}());
+
+(function(a, b) {
+   var e = 5;
+   var f = 6;     
+   console.log(a); 
+   a = a + 17;
+   // console.log(d);
+   console.log('anonymous closure executed');
+})(a, b);
+
+if (a !== undefined) {
+    console.log(a);     
+};
+
+if (b !== undefined) {
+        console.log(b);
+}
+
+if (window.c !== undefined) {
+        console.log(c);
+}
+
+if (window.d !== undefined) {
+        console.log(d);
+}
+
+if (window.e !== undefined) {
+        console.log(e);
+}
+
+if (window.f !== undefined) {
+        console.log(window.f);
+}
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>YUI Event Bus Example</title>
+        <meta name="generator" content="TextMate http://macromates.com/">
+        <meta name="author" content="Alex Reid">
+        <!-- Date: 2009-07-15 -->
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+</head>
+<body>
+
+<h1>YUI Event Bus Example</h1>
+
+<div id="addedHandlers">
+        <div id="h"></div>
+</div>
+
+<button id="b">Fire a PersonListLoaded event</button><br/>
+<button id="b2">Add another handler widget</button>
+
+<script>
+/***
+  * YUI custom event example
+  * @author             Alex Reid
+**/
+(function() {
+        // Custom event
+        var PersonListLoadedEvent = new YAHOO.util.CustomEvent("PersonListLoadedEvent");
+        var panel = YAHOO.util.Dom.get("h");
+        
+        // Handler widget (consumer)
+        function HandlerWidget() {
+                PersonListLoadedEvent.subscribe(this.onPersonListLoaded, this);
+                this.setText = function(t) {
+                        this.element.innerHTML = t;
+                }               
+                this.element = document.createElement("div");
+                this.element.id = YAHOO.util.Dom.generateId();
+                panel.appendChild(this.element);
+                this.setText("I am a new handler widget.");
+        }
+        
+        HandlerWidget.prototype.onPersonListLoaded = function(e,b,widget) {
+                widget.setText("onPersonListLoaded event received");
+        }
+        
+        // Wire up buttons to click events
+        YAHOO.util.Event.addListener("b", 'click', function(e) {
+                PersonListLoadedEvent.fire();
+        });
+
+        YAHOO.util.Event.addListener("b2", 'click', function(e) {
+                new HandlerWidget();
+        });
+        
+        new HandlerWidget();
+})();
+</script>
+
+</body>
+</html>
