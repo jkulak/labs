@@ -12,4 +12,4 @@ Deployment configuration is available here: https://circleci.com/gh/jkulak/labs
 
 # Live version
 
-Check out the working versions at: http://labs.webascrazy.net:20202/
+Check out the working versions at: http://labs.webascrazy.net/
