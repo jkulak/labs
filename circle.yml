@@ -1,0 +1,14 @@
+machine:
+    services:
+        - docker
+
+dependencies:
+    override:
+        - docker build --rm=false -t jkulak/labs .
+
+deployment:
+    production:
+        branch: master
+        commands:
+            - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
+            - ./scripts/docker-deploy.sh
