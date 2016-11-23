@@ -5,6 +5,9 @@ machine:
 dependencies:
     override:
         - docker build --rm=false -t jkulak/labs .
+test:
+    override:
+        - docker run jkulak/labs echo "Tests!"
 
 deployment:
     production:
