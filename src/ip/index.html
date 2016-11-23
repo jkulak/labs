@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>IP</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <p></p>
+
+        <table>
+            <th>
+                <td>IPv4</td><td>IPv6</td>
+            </th>
+            <tr>
+                <td>4 bytes</td><td>16 bytes</td>
+            </tr>
+        </table>
+
+        <p>1 byte = 8 bits </p>
+        <p>0, 1 binary = 1 bit</p>
+        <p>11111111 = 255 = FF</p>
+        <p>255.255.255.255 = 11111111.11111111.11111111.11111111 = FF.FF.FF.FF</p>
+        <p>IPv4 uses 32 bit addresses - 11111111.11111111.11111111.11111111</p>
+        <p>IPv6 uses 128 bit addresses (4x more) - FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF</p>
+
+        <pre>
+            # all the following refer to the same address
+            2001:0000:0234:C1AB:0000:00A0:AABC:003F
+            # leading zeros can be omitted
+            2001:0:234:C1AB:0:A0:AABC:3F
+            # not case sensitive - any mixture allowed
+            2001:0:0234:C1ab:0:A0:aabc:3F
+        </pre>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
