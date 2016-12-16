@@ -23,10 +23,15 @@ $ docker build -t jkulak/labs .
 
 2. Run the image with mounted dev directory
 ```
+docker run -v ~/Developer/labs/:/var/www/html/ -p 20202:80 --name labs_dev jkulak/labs
+```
+
+Debug
+```
 $ docker run --rm -ti -v ~/Developer/labs/:/var/www/html/ -p 20202:80 --name labs_dev jkulak/labs sh
 ```
 
 # Run locally
 
 1. Build the image `$ docker build -t jkulak/labs .`
-2. Runt the image `$ docker un -p 20202:80 --name labs_web jkulak/labs`
+2. Runt the image `$ docker run -p 20202:80 --name labs_web jkulak/labs`

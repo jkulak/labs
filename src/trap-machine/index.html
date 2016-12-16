@@ -1,0 +1,105 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Beat machine | labs.webascrazy.net</title>
+    <meta name="description" content="Beat machine built in JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <ul class="sounds buttons">
+        <li data-key="81"><kbd>Q</kbd><span class="sound">boom</span></li>
+        <li data-key="87"><kbd>W</kbd><span class="sound">kick 1</span></li>
+        <li data-key="69"><kbd>E</kbd><span class="sound">kick 2</span></li>
+        <li data-key="82"><kbd>R</kbd><span class="sound">snare 1</span></li>
+        <li data-key="84"><kbd>T</kbd><span class="sound">snare 2</span></li>
+        <li data-key="89"><kbd>Y</kbd><span class="sound">clap</span></li>
+        <li data-key="85"><kbd>U</kbd><span class="sound">rim</span></li>
+        <li data-key="73"><kbd>I</kbd><span class="sound">snap</span></li>
+        <li data-key="79"><kbd>O</kbd><span class="sound">hihat 1</span></li>
+        <li data-key="80"><kbd>P</kbd><span class="sound">hihat 2</span></li>
+    </ul>
+
+    <ul class="sounds buttons">
+        <li data-key="65"><kbd>A</kbd><span class="sound">rise 1</span></li>
+        <li data-key="83"><kbd>S</kbd><span class="sound">rise 2</span></li>
+        <li data-key="68"><kbd>D</kbd><span class="sound">cash</span></li>
+        <li data-key="70"><kbd>F</kbd><span class="sound">fx 1</span></li>
+        <li data-key="71"><kbd>G</kbd><span class="sound">huh</span></li>
+        <li data-key="72"><kbd>H</kbd><span class="sound">hou</span></li>
+        <li data-key="74"><kbd>J</kbd><span class="sound">voc 1</span></li>
+        <li data-key="75"><kbd>K</kbd><span class="sound">damn son</span></li>
+        <li data-key="76"><kbd>L</kbd><span class="sound">word 1</span></li>
+    </ul>
+
+    <ul class="sounds loops buttons">
+        <li data-key="90"><kbd>Z</kbd><span>loop 1</span></li>
+        <li data-key="88"><kbd>X</kbd><span>loop 2</span></li>
+        <li data-key="67"><kbd>C</kbd><span>loop 3</span></li>
+    </ul>
+
+    <audio data-key="81" src="sounds/p_808boom1.mp3"></audio>
+    <audio data-key="87" src="sounds/p_kick1.mp3"></audio>
+    <audio data-key="69" src="sounds/p_kick2.mp3"></audio>
+    <audio data-key="82" src="sounds/p_snare1.mp3"></audio>
+    <audio data-key="84" src="sounds/p_snare2.mp3"></audio>
+    <audio data-key="89" src="sounds/p_clap1.mp3"></audio>
+    <audio data-key="85" src="sounds/p_rim1.mp3"></audio>
+    <audio data-key="73" src="sounds/p_snap1.mp3"></audio>
+    <audio data-key="79" src="sounds/p_hihat1.mp3"></audio>
+    <audio data-key="80" src="sounds/p_hihat2.mp3"></audio>
+
+    <audio data-key="65" src="sounds/e_rise1.mp3" volume="0,4"></audio>
+    <audio data-key="83" src="sounds/e_rise2.mp3"></audio>
+    <audio data-key="68" src="sounds/e_cash.mp3"></audio>
+    <audio data-key="70" src="sounds/e_fx1.mp3"></audio>
+    <audio data-key="71" src="sounds/v_hee1.mp3"></audio>
+    <audio data-key="72" src="sounds/v_hou1.mp3"></audio>
+    <audio data-key="74" src="sounds/v_voc1.mp3"></audio>
+    <audio data-key="75" src="sounds/v_wherefind.mp3"></audio>
+    <audio data-key="76" src="sounds/v_word1.mp3"></audio>
+
+    <div id="loops">
+        <audio data-key="90" data-group="1" src="sounds/loop1.mp3" loop></audio>
+        <audio data-key="88" data-group="1" src="sounds/loop2.mp3" loop></audio>
+        <audio data-key="67" data-group="1" src="sounds/loop3.mp3" loop></audio>
+    </div>
+
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        (function(b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function() {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-88988916-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
