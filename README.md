@@ -26,9 +26,21 @@ $ docker build -t jkulak/labs .
 docker run -v ~/Developer/labs/:/var/www/html/ -p 20202:80 --name labs_dev jkulak/labs
 ```
 
+3. Debug
+
 Debug
 ```
 $ docker run --rm -ti -v ~/Developer/labs/:/var/www/html/ -p 20202:80 --name labs_dev jkulak/labs sh
+```
+
+Debug a running container
+```
+$ docker exec -ti labs_dev bash
+```
+
+Tailf the PHP logs
+```
+$ docker exec -ti labs_dev tailf /var/log/apache2/error.log
 ```
 
 # Run locally

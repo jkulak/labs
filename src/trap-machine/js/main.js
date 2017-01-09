@@ -1,6 +1,5 @@
 (function () {
-    'use strict';
-
+'use strict';
     // play plays either sounds or loops depending on the pressed buttons
     function play(e) {
 
