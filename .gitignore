@@ -1,3 +1,4 @@
 .DS_Store
 .ssh-circleci
 src/trap-machine/sounds/_originals/
+_NOTES_labs.md

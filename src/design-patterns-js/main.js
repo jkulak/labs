@@ -45,8 +45,6 @@
     apple.makeOlder(10);
     console.log(apple.getInfo());
 
-
-
     // 2. Using object literals (singleton)
 
     // const obj1 = new Object(); // Object literal is preferred over the new Object()
@@ -65,6 +63,44 @@
     }();
 
     console.log(animal);
-    console.log("koniec");
 
+    // 4. BEST (in most cases), using prototypal inheritance (objects from objects)
+    // - defined a create function to initiate (zero) proper properties
+    // - use Object.create(object) to create new instances of "object" and inherit from it
+
+    const Rectangle = {
+        create: function(x, y) {
+                const obj = Object.create(this); // own 'factory' method (avoid using 'constructor' name)
+                obj.x = x;
+                obj.y = y;
+                obj.layers = []; // otherwise this will be always
+                return obj;
+        },
+        x: 10,
+        y: 10,
+        layers: [],
+        area: function() {
+                return this.x * this.y;
+        },
+    };
+
+    let rect = Rectangle.create(4, 4);
+    console.log(rect);
+
+    // prototypal inheritance from Rectangle
+    const Square = Object.create(Rectangle);
+    Square.create = function(side) {
+        return Rectangle.create(side, side);
+    };
+
+    let square = Square.create(99);
+    console.log(square.area());
+
+    // let a = Object.create(square);
+    // a.x = 11;
+    // a.y = 11;
+    // console.log(a);
+    // console.log(a.area());
+
+    console.log("koniec");
 })();
