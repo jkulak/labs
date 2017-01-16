@@ -1,0 +1,94 @@
+html {
+    box-sizing: border-box;
+    background-color: #5e5e5e;
+    font-family: 'helvetica neue';
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    font-weight: bold;;
+    color: black;
+}
+
+body {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.panels {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    cursor: pointer;
+    text-shadow:
+      3px 3px 0 white,
+    -1px -1px 0 white,
+     1px -1px 0 white,
+     -1px 1px 0 white,
+      1px 1px 0 white;
+}
+
+.panel {
+    background-color: #ecb511;
+    box-shadow: inset 0 0 0 5px rgba(252, 252, 252, 0.2);
+    text-align: center;
+    align-items: center;
+    transition: font-size 0.4s cubic-bezier(0.6,-0.2,0.7,-0.1), flex 0.4s cubic-bezier(0.6,-0.2,0.7,-0.1), background 0.2s;
+    font-size: 30px;
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel > * {
+    margin: 0;
+    width: 100%;
+    transition: transform 0.5s;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel > *:first-child { transform: translateY(-100%);}
+.panel.open-active > *:first-child { transform: translateY(0);}
+.panel > *:last-child { transform: translateY(100%);}
+.panel.open-active > *:last-child { transform: translateY(0);}
+
+.panel.open {
+    font-size: 60px;
+    flex: 5;
+}
+
+.panel p {
+    text-transform: uppercase;
+}
+
+.panel p:nth-child(2) {
+    font-size: 3em;
+}
+
+.panel1 {
+    background-image: url(img/1.jpg);
+}
+
+.panel2 {
+    background-image: url(img/2.jpg);
+}
+
+.panel3 {
+    background-image: url(img/3.jpg);
+}
+
+.panel4 {
+    background-image: url(img/4.jpg);
+}
+
+.panel5 {
+    background-image: url(img/5.jpg);
+}
