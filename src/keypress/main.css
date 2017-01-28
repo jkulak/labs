@@ -1,0 +1,103 @@
+/* RESET */
+
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Cabin", sans-serif;
+    color: #000;
+    background: linear-gradient(#a6798e, #a54885);
+}
+
+a {
+    color: #000;
+}
+
+#container {
+    display: flex;
+    min-height: 100vh;
+    min-width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;;
+}
+
+#display {
+    font-size: 40vh;
+    color: #724eb8;
+    text-align: center;
+    text-shadow: 2px 2px 0 #523180;
+    margin: 0 50px;
+}
+
+#keys {
+    height: 6vh;
+}
+
+#keys li {
+    display: inline-block;
+    padding: 1vw;
+    margin-right: 1vw;
+    color: #2d2e2e;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    font-size: 5vw;
+    font-weight: 700;
+    background-color: #f4f7f8;
+    border: 1px solid #b4b4b4;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+}
+
+#keys .hidden {
+    display: none;
+}
+
+p {
+    text-align: center;
+    text-shadow: 1px 1px 1px #aaa;
+    background-color: white;
+    display: block;
+    opacity: 0.6;
+    padding: 1vh;
+}
+
+header p {
+    font-size: 30px;
+    border-radius: 4px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 92vw;
+    margin: 4vw;
+    transition: opacity 1.5s;
+}
+
+.fade {
+    opacity: 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: opacity 0.2s;
+    opacity: 0.7;
+}
+
+footer.fade {
+    opacity: 0.1;
+}
+
+.emoji {
+    font-size: 30px;
+    vertical-align: sub;
+}
+
+.twitter-follow-button, .twitter-share-button {
+    vertical-align: text-bottom;
+}

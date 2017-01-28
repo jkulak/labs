@@ -1,0 +1,65 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Key codes for JavaScript events</title>
+    <meta name="description" content="Get JavaScript event key codes and ASCII for lower caps keys and specials">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <header>
+        <p>Press any key to get its JavaScript event code (and ASCII for lower caps)</p>
+    </header>
+
+    <div id="container">
+        <span id="display">Hi!</span>
+        <ul id="keys">
+            <li class="hidden" id="capsKey">caps lock</li>
+            <li class="hidden" id="shiftKey">shift</li>
+            <li class="hidden" id="ctrlKey">ctrl</li>
+            <li class="hidden" id="altKey">alt</li>
+            <li class="hidden" id="metaKey">meta</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Made with <span class="emoji">☕️</span> and <span class="emoji">🍩</span> by <a href="https://webascrazy.net/">Jakub Kułak</a> - <a href="https://twitter.com/jakub_kulak" class="twitter-follow-button" data-show-count="false">Follow @jakub_kulak</a>
+            <!-- <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://keycode.webascrazy.net" data-text="Pretty tool for gettig ASCII keycodes" data-via="jakub_kulak" data-related="jakub_kulak">Tweet</a>-->Inspired by <a href="http://keycode.info">keycode.info</a>
+        </p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <script>
+        (function(b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function() {
+                    (b[l].q = b[l].q || []).push(arguments);
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-88988916-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
