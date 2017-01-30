@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Autocomplete | labs.webascrazy.net</title>
-    <meta name="description" content="Using autocomplete to filter values using JavaScript">
+    <title>Guessy-Guessy</title>
+    <meta name="description" content="Guess a word based on its dictionary description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css">
 </head>
@@ -17,10 +17,15 @@
             <a class="control-newgame" href="#">Start new game</a>
         </div>
 
+        <div class="stats">
+            <div>points: <span class="points">0</span></div>
+            <div><span class="timer">0</span>s</div>
+        </div>
+
         <div class="definition">Here we will have a definition...</div>
         <div class="hint">hint</div>
-        <div>points: <span class="points">0</span></div>
-        <div class=""><span class="timer">0</span>s</div>
+
+
 
         <form class="answer-form">
             <label for="answer">The above, is a definition of...</label>

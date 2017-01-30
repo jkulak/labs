@@ -9,13 +9,23 @@ html {
   box-sizing: inherit;
 }
 input {
-  width: 100%;
-  padding:20px;
+  /*width: 100%;*/
+  padding:10px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 480px;
+    border: 1px dashed #3f54d1;
+    padding: 10px;
+}
+
+.definition {
+    margin-bottom: 20px;
 }
 
 .answer-form {
-  max-width:400px;
-  margin:50px auto;
+  margin-bottom: 20px;
 }
 
 input.answer {
@@ -40,8 +50,8 @@ input.answer {
 .answers li {
   background:white;
   list-style: none;
-  border-bottom: 1px solid #D8D8D8;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  /*border-bottom: 1px solid #D8D8D8;*/
+  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);*/
   margin:0;
   padding:20px;
   transition:background 0.2s;
@@ -50,40 +60,29 @@ input.answer {
   text-transform: capitalize;
 }
 
-.answers li:nth-child(even) {
-  transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
-  /*background: linear-gradient(to bottom,  #ffffff 0%,#EFEFEF 100%);*/
-}
-.answers li:nth-child(odd) {
-  transform: perspective(100px) rotateX(-3deg) translateY(3px);
-  /*background: linear-gradient(to top,  #ffffff 0%,#EFEFEF 100%);*/
-}
-
 li.bad {
-    background-color: #ff5060;
+    background: linear-gradient(to top,  #ff5060 0%,#ffa9a4 100%);
 }
 li.good {
-    background-color: #88ff99;
+    background: linear-gradient(to top,  #88ff99 0%,#bbffb8 100%);
 }
 
 span.population {
   font-size: 15px;
 }
 
-
-.details {
-  font-size: 15px;
-}
-
-.hl {
-  background:#00e2ff;
-}
-
-.love {
-}
-
 a {
   color:black;
   background:rgba(0,0,0,0.1);
   text-decoration: none;
+}
+
+.control-panel {
+    margin-bottom: 20px;
+    border-bottom: 5px solid #4e67ff;
+}
+
+.stats {
+    margin-bottom: 20px;
+    border-bottom: 5px solid #4e67ff;
 }

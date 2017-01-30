@@ -2,36 +2,40 @@
     'use strict';
 
     const game = {
-        points: 0,
+        // number of games played
         count: 0,
+        points: 0,
         questions: {},
         current: {},
+
+        settings: {
+            answerTiemLimit: 30
+        },
+
+        init: function () {
+            const endpoint = 'dict-a.json';
+
+            fetch(endpoint)
+                .then(data => data.json())
+                .then(data => {
+                    game.questions = data;
+                    game.new();
+                });
+        },
+
+        // Start a new game
+        new: function () {
+            this.count++;
+            this.points = 0;
+
+            answers.innerHTML = "";
+
+            updateStats();
+            nextQuestion();
+        },
+
+
     };
-
-    function initGame() {
-
-        const endpoint = 'dict-a.json';
-
-        fetch(endpoint)
-            .then(data => data.json())
-            .then(data => {
-                game.questions = data;
-                newGame();
-            });
-    }
-
-    // Start a new game
-    function newGame() {
-
-        game.count++;
-        game.points = 0;
-
-        answers.innerHTML = "";
-
-        updateStats();
-        nextQuestion();
-
-    }
 
     function displayQuestion(q) {
 
@@ -103,7 +107,7 @@
 
     // Bind actions to controls
     document.querySelector('.control-newgame').onclick = function () {
-        newGame();
+        game.new();
         return false;
     };
 
@@ -118,6 +122,6 @@
 
     answerInput.addEventListener('keyup', checkAnswer);
 
-    initGame();
+    game.init();
 
 })();
