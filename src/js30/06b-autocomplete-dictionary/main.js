@@ -19,7 +19,7 @@
                 .then(data => data.json())
                 .then(data => {
                     game.questions = data;
-                    game.new();
+                    // hide loading
                 });
         },
 
