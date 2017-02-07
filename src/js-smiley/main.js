@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    const emoji = document.querySelector('.emoji');
+    var emoji = document.querySelector('.emoji');
     document.addEventListener('mousemove', function (e) {
         var emojis = ["💀", "😭", "😪", "😢", "😥", "😧", "😦", "🙁", "😑", "😐", "😏", "🙂", "☺️", "😊", "😄", "😅", "😍"];
         var elem = Math.floor(e.clientX / window.innerWidth * emojis.length);
