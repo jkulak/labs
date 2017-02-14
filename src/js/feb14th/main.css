@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: 'Caveat Brush', cursive;
+    font-size: 60px;
+}
+
+.stats {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: none;
+}
+
+.container {
+    height: 100vh;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcecfc+0,fba6e1+80,fd89d7+87,ff7cd8+100 */
+    background: rgb(252, 236, 252);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(252, 236, 252, 1) 0%, rgba(251, 166, 225, 1) 80%, rgba(253, 137, 215, 1) 87%, rgba(255, 124, 216, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(252, 236, 252, 1) 0%, rgba(251, 166, 225, 1) 80%, rgba(253, 137, 215, 1) 87%, rgba(255, 124, 216, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(252, 236, 252, 1) 0%, rgba(251, 166, 225, 1) 80%, rgba(253, 137, 215, 1) 87%, rgba(255, 124, 216, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcecfc', endColorstr='#ff7cd8', GradientType=0);
+    /* IE6-9 */
+    text-align: center;
+}
+
+.heart {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    position: fixed;
+    /*transform: rotate(45deg) scale(2);*/
+    /*transform: rotate3d(1,0,0,60deg);*/
+    color: transparent;
+
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+    top: 50%;
+
+}
+
+.heart::before, .heart::after {
+    content: '';
+    display: inline-block;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+    left: 0;
+    top: -50%;
+}
+
+.heart::after {
+    top: 0;
+    left: -50%;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1) rotate(45deg);
+    }
+    20% {
+        transform: scale(2) rotate(49deg);
+    }
+    100% {
+        transform: scale(1) rotate(45deg);
+    }
+}
