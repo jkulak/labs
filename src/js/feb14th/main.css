@@ -40,12 +40,11 @@ body {
 
 .heart {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 30px;
+    height: 30px;
     background-color: red;
     position: fixed;
-    /*transform: rotate(45deg) scale(2);*/
-    /*transform: rotate3d(1,0,0,60deg);*/
+    transform: rotate3d(1,0,0,60deg);
     color: transparent;
 
     animation-name: pulse;
@@ -60,12 +59,13 @@ body {
     content: '';
     display: inline-block;
     border-radius: 50%;
-    width: 10px;
-    height: 10px;
+    width: 30px;
+    height: 30px;
     background-color: red;
     position: absolute;
     left: 0;
     top: -50%;
+    opacity: 0.5;
 }
 
 .heart::after {
@@ -75,12 +75,15 @@ body {
 
 @keyframes pulse {
     0% {
-        transform: scale(1) rotate(45deg);
+        transform: scale(1) rotate(45deg) rotate3d(1,0,0,60deg);
     }
     20% {
-        transform: scale(2) rotate(49deg);
+        transform: scale(2) rotate(49deg) rotate3d(1,2,3,60deg);
+    }
+    50% {
+        transform: scale(2) rotate(49deg) rotate3d(1,2,3,0deg);
     }
     100% {
-        transform: scale(1) rotate(45deg);
+        transform: scale(1) rotate(45deg) rotate3d(1,0,0,60deg);
     }
 }

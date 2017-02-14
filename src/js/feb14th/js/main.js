@@ -2,7 +2,7 @@
     'use strict';
 
     // Const
-    var MAX_ELEMS = 1000;
+    var MAX_ELEMS = 200;
 
     // User inteface
     var container = document.querySelector('.container');
@@ -57,5 +57,17 @@
             stamp(e.clientX, e.clientY);
         }
     });
+
+    function getRandomInt(vmax, vmin = 0) {
+        const min = Math.ceil(vmin);
+        const max = Math.floor(vmax);
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    setInterval(function () {
+        const x = getRandomInt(window.innerWidth);
+        const y = getRandomInt(window.innerHeight);
+        stamp(x, y);
+    }, 450);
 
 })();
