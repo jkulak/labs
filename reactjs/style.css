@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    boder: 0;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+div, footer, nav {
+    /*border: 1px solid white;*/
+    border-color: rgba(255,255,255,0.05);
+    margin-bottom: 20px;
+}
+
+input, select {
+    margin-right: 10px;
+}
+
+select {
+    height: 52px;
+}
+
+body {
+    background-color: #2c015a;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+}
+
+a {
+    color: white;
+}
+
+.container {
+    max-width: 720px;
+    margin: 10px auto;
+}
+
+footer {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+}
+
+footer a {
+    color: rgba(255,255,255,0.5);
+}
+
+.filters {
+    list-style-type: none;
+    display: inline;
+}
+
+.filters li {
+    display: inline;
+    margin-right: 10px;
+    cursor: pointer;
+    text-transform: lowercase;
+}
+
+.filters li.active {
+    text-decoration: underline;
+}
+
+.list li {
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.list input[type="text"], select {
+    background-color: #37007a;
+    border: 0;
+    border-bottom: 2px solid #cc66ff;
+    font-family: 'Raleway', sans-serif;
+    color: inherit;
+    font-size: 24px;
+    padding: 10px;
+    width: 185px;
+}
+
+.list input[type="submit"] {
+    cursor: pointer;
+    border: 0;
+    background-color: inherit;
+}
+
+.added {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+}
+
+li.completed-true {
+    text-decoration: line-through;
+}
